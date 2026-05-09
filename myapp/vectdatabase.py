@@ -15,7 +15,7 @@ def split_into_chunks(doc_file: str) -> List[str]:
     return [chunk for chunk in content.split("\n\n")]
 
 # 将文件内容做分片处理
-chunks = split_into_chunks("D:\\python_dev\\conda_dev\\doc.txt")
+chunks = split_into_chunks("D:\\python_dev\\conda_dev\\doctest.txt")
 
 # 指定模型路径并加载模型
 embedding_model = SentenceTransformer(text2vec_path)
@@ -63,7 +63,7 @@ def retrieve(query: str, top_k: int) -> List[str]:
     return results['documents'][0]
 
 #query = "用户需求是什么？“
-query = "用户需求是什么？"
+query = "用户需求"
 retrieve_chunks = retrieve(query, 2)
 
 '''
